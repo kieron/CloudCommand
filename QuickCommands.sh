@@ -8,12 +8,12 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Plex AutoScan Log")
-        echo "Launching Plex Autoscan Log Tail"
+        echo "Launching Plex Autoscan Log Tail."
         echo
         tail -f /opt/plex_autoscan/plex_autoscan.log -n 30
         ;;
         "Cloudplow Log")
-        echo "Launching Cloudplow Log Tail"
+        echo "Launching Cloudplow Log Tail."
         echo
         tail -f /opt/cloudplow/cloudplow.log -n 30
         ;;
@@ -27,11 +27,11 @@ do
         ncdu /opt
         ;;
         "NCDU Local Mount")
-        echo "Launching NCDU in Local Mount"
+        echo "Launching NCDU in Local Mount."
         ncdu "/mnt/local/"
         ;;
         "Get Plex Token")
-        echo "Launching Plex Token Script"
+        echo "Launching Plex Token Script."
         /scripts/files/plex_token.sh
         ;;
         "Plex Sync Folder Size")
@@ -39,19 +39,19 @@ do
         echo $currSize
         ;;
         "Show Certificate Information")
-        echo "Launching Certificate Information"
+        echo "Launching Certificate Information."
         docker exec letsencrypt /app/cert_status
         ;;
         "Renew Necessary Certificates")
-        echo "Forcing Renew of all Necessary Cerificates"
+        echo "Forcing Renew of all Necessary Cerificates."
         docker exec letsencrypt /app/signal_le_service
         ;;
         "Force Renew ALL Certificates")
-        echo "Forcing Renew of ALL Cerificates"
+        echo "Forcing Renew of ALL Cerificates."
         docker exec letsencrypt /app/cert_status
         ;;
         "Nench Benchmark")
-        echo "Launching Nench Benchmark"
+        echo "Launching Nench Benchmark."
         echo
         curl -s wget.racing/nench.sh | bash
         ;;
