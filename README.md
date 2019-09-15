@@ -1,7 +1,7 @@
 # Cloudbox Quick Command Launcher
 A very simple script to quickly launch common scripts/commands, relating to a Cloudbox environment.
 
-### Install:
+### Install
 
 The below will download the script, place it into `/opt/scripts` and set up an alias of `qc` for you to run the script.
 
