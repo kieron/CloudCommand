@@ -13,7 +13,7 @@ do
         tail -f /opt/plex_autoscan/plex_autoscan.log -n 30
         ;;
         "Cloudplow Log")
-        echo "Launching Cloudplow Log Tail"
+        echo "Launching Cloudplow Log Tail."
         echo
         tail -f /opt/cloudplow/cloudplow.log -n 30
         ;;
