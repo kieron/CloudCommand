@@ -22,7 +22,7 @@ Zsh:
    3. Run `source ~/.zshrc` to make the new alias available.
 
 
-## Updating
+### Updating
 
 Updating instructions are actually the same as downloading currently, simply run:
 
