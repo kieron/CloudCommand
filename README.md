@@ -18,4 +18,9 @@ Zsh:
    2. Add `alias qc="/opt/scripts/quickCommands.sh"`
 
 
+Updating
+
+Updating instructions are actually the same as downloading currently, simply run:
+`curl "https://raw.githubusercontent.com/phunkb/Cloudbox-Quick-Command-Launcher/master/QuickCommands.sh" > /opt/scripts/quickCommands.sh; chmod +x /opt/scripts/quickCommands.sh`
+
 
