@@ -1,7 +1,7 @@
 # Cloudbox Quick Command Launcher
 A very simple script to quickly launch common scripts/commands, relating to a Cloudbox environment.
 
-Instructions:
+### Instructions:
 
 1.  `curl "https://raw.githubusercontent.com/phunkb/Cloudbox-Quick-Command-Launcher/master/QuickCommands.sh" > /opt/scripts/quickCommands.sh; chmod +x /opt/scripts/quickCommands.sh`
 
@@ -18,7 +18,7 @@ Zsh:
    2. Add `alias qc="/opt/scripts/quickCommands.sh"`
 
 
-Updating
+## Updating
 
 Updating instructions are actually the same as downloading currently, simply run:
 `curl "https://raw.githubusercontent.com/phunkb/Cloudbox-Quick-Command-Launcher/master/QuickCommands.sh" > /opt/scripts/quickCommands.sh; chmod +x /opt/scripts/quickCommands.sh`
