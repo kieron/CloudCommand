@@ -5,7 +5,7 @@ echo -e "\e[32mCloudbox Quick Command Launcher"
 echo -e "Choose a command from below:\e[37m"
 echo
 PS3='Enter Command: '
-options=("Plex AutoScan Log" "Cloudplow Log" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Plex Sync Folder Size" "Show Certificate Information" "Fix Plex Trash" "Renew Necessary Certificates" "Force Renew ALL Certificates" "NCDU Local Mount" "Get Plex Token" "Nench Benchmark" "Quit")
+options=("Plex AutoScan Log" "Cloudplow Log" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Plex Sync Folder Size" "Show Certificate Information" "Fix Plex Trash" "Renew Necessary Certificates" "Force Renew ALL Certificates" "NCDU Local Mount" "Get Plex Token" "Update Ubuntu" "Nench Benchmark" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -55,6 +55,15 @@ do
         "Force Renew ALL Certificates")
         echo -e "\e[96mForcing Renew of ALL Cerificates. \e[39m"
         docker exec letsencrypt /app/cert_status
+        ;;
+		"Update Ubuntu")
+			echo -e "\e[96mUpdating Ubuntu \e[39m"
+			sudo -s -- <<EOF
+			apt-get update
+			apt-get dist-upgrade -y
+			apt-get autoremove -y
+			apt-get autoclean -y
+			EOF
         ;;
         "Nench Benchmark")
         echo "Launching Nench Benchmark. \e[39m"
