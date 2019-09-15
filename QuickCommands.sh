@@ -18,12 +18,12 @@ do
         tail -f /opt/cloudplow/cloudplow.log -n 30
         ;;
         "NCDU /opt (excluding Plex)")
-        echo "Launching NCDU (excluding Plex)"
+        echo "Launching NCDU (excluding Plex)."
         echo
         ncdu -x /opt --exclude=/opt/plex
         ;;
         "NCDU /opt (including Plex)")
-        echo "Launching NCDU (including Plex)"
+        echo "Launching NCDU (including Plex)."
         ncdu /opt
         ;;
         "NCDU Local Mount")
