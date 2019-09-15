@@ -58,12 +58,10 @@ do
         ;;
 		"Update Ubuntu")
 			echo -e "\e[96mUpdating Ubuntu \e[39m"
-			sudo -s -- <<EOF
-			apt-get update
-			apt-get dist-upgrade -y
-			apt-get autoremove -y
-			apt-get autoclean -y
-			EOF
+			sudo apt-get update
+			sudo apt-get dist-upgrade -y
+			sudo apt-get autoremove -y
+			sudo apt-get autoclean -y
         ;;
         "Nench Benchmark")
         echo "Launching Nench Benchmark. \e[39m"
