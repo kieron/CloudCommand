@@ -32,7 +32,7 @@ do
         ;;
         "Get Plex Token")
         echo "Launching Plex Token Script."
-        /scripts/files/plex_token.sh
+        /opt/scripts/plex/plex_token.sh
         ;;
         "Plex Sync Folder Size")
         currSize=$(sudo du -sh '/opt/plex/Library/Application Support/Plex Media Server/Cache/Transcode' | awk '{print $1}')
