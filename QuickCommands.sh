@@ -7,53 +7,54 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Plex AutoScan Log")
-        echo "Launching Plex Autoscan Log Tail."
+        echo -e "\e[96mLaunching Plex Autoscan Log Tail. \e[39m"
+		echo
         tail -f /opt/plex_autoscan/plex_autoscan.log -n 30
         ;;
         "Cloudplow Log")
-        echo "Launching Cloudplow Log Tail."
+        echo -e "\e[96mLaunching Cloudplow Log Tail. \e[39m"
         echo
         tail -f /opt/cloudplow/cloudplow.log -n 30
         ;;
         "NCDU /opt (excluding Plex)")
-        echo "Launching NCDU (excluding Plex)."
+        echo -e "\e[96mLaunching NCDU (excluding Plex). \e[39m"
         echo
         ncdu -x /opt --exclude=/opt/plex
         ;;
         "NCDU /opt (including Plex)")
-        echo "Launching NCDU (including Plex)."
+        echo -e "\e[96mLaunching NCDU (including Plex). \e[39m"
         ncdu /opt
         ;;
         "NCDU Local Mount")
-        echo "Launching NCDU in Local Mount."
+        echo -e "\e[96mLaunching NCDU in Local Mount. \e[39m"
         ncdu "/mnt/local/"
         ;;
         "Get Plex Token")
-        echo "Launching Plex Token Script."
+        echo -e "\e[96mLaunching Plex Token Script. \e[39m"
         /opt/scripts/plex/plex_token.sh
         ;;
         "Plex Sync Folder Size")
         currSize=$(sudo du -sh '/opt/plex/Library/Application Support/Plex Media Server/Cache/Transcode' | awk '{print $1}')
-        echo "Sync Folder Size is: $currSize"
+        echo -e "\e[96mSync Folder Size is: $currSize \e[39m"
         ;;
 		"Fix Plex Trash")
-		echo "Running Plex Trash Fixer Script."
+		echo -e "\e[96mRunning Plex Trash Fixer Script. \e[39m"
         /opt/scripts/plex/plex_trash_fixer.py
 		;;
         "Show Certificate Information")
-        echo "Launching Certificate Information."
+        echo -e "\e[96mLaunching Certificate Information. \e[39m"
         docker exec letsencrypt /app/cert_status
         ;;
         "Renew Necessary Certificates")
-        echo "Forcing Renew of all Necessary Cerificates."
+        echo -e "\e[96mForcing Renew of all Necessary Cerificates. \e[39m"
         docker exec letsencrypt /app/signal_le_service
         ;;
         "Force Renew ALL Certificates")
-        echo "Forcing Renew of ALL Cerificates."
+        echo -e "\e[96mForcing Renew of ALL Cerificates. \e[39m"
         docker exec letsencrypt /app/cert_status
         ;;
         "Nench Benchmark")
-        echo "Launching Nench Benchmark."
+        echo "Launching Nench Benchmark. \e[39m"
         echo
         curl -s wget.racing/nench.sh | bash
         ;;
