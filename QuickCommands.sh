@@ -3,7 +3,7 @@
 echo "Cloudbox Quick Command Launcher"
 echo
 PS3='Choose Command: '
-options=("Plex AutoScan Log" "Cloudplow Log" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Plex Sync Folder Size" "Show Certificate Information" "Renew Necessary Certificates" "Force Renew ALL Certificates" "NCDU Local Mount" "Get Plex Token" "Nench Benchmark" "Quit")
+options=("Plex AutoScan Log" "Cloudplow Log" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Plex Sync Folder Size" "Show Certificate Information" "Fix Plex Trash" "Renew Necessary Certificates" "Force Renew ALL Certificates" "NCDU Local Mount" "Get Plex Token" "Nench Benchmark" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -38,6 +38,10 @@ do
         currSize=$(sudo du -sh '/opt/plex/Library/Application Support/Plex Media Server/Cache/Transcode' | awk '{print $1}')
         echo "Sync Folder Size is: $currSize"
         ;;
+		"Fix Plex Trash")
+		echo "Running Plex Trash Fixer Script."
+        /opt/scripts/plex/plex_trash_fixer.py
+		;;
         "Show Certificate Information")
         echo "Launching Certificate Information."
         docker exec letsencrypt /app/cert_status
