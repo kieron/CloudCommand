@@ -1,6 +1,6 @@
 #!/bin/bash
 # Cloudbox Quick Command Launcher v.0.1
-echo -e "\e[32m\e[100mCloudbox Quick Command Launcher \e[37m \e[49m"
+echo -e "\e[32mCloudbox Quick Command Launcher \e[37m""
 echo
 PS3='Choose Command: '
 options=("Plex AutoScan Log" "Cloudplow Log" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Plex Sync Folder Size" "Show Certificate Information" "Fix Plex Trash" "Renew Necessary Certificates" "Force Renew ALL Certificates" "NCDU Local Mount" "Get Plex Token" "Nench Benchmark" "Quit")
@@ -8,7 +8,7 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Plex AutoScan Log")
-        echo "Launching Plex Autoscan Log Tail."
+        echo "\e[96m Launching Plex Autoscan Log Tail. \e[39m"
         echo
         tail -f /opt/plex_autoscan/plex_autoscan.log -n 30
         ;;
