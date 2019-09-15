@@ -36,7 +36,7 @@ do
         ;;
         "Plex Sync Folder Size")
         currSize=$(sudo du -sh '/opt/plex/Library/Application Support/Plex Media Server/Cache/Transcode' | awk '{print $1}')
-        echo $currSize
+        echo "Sync Folder Size is: $currSize"
         ;;
         "Show Certificate Information")
         echo "Launching Certificate Information."
