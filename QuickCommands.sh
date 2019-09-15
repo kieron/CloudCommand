@@ -1,10 +1,9 @@
-
 #!/bin/bash
 # Cloudbox Quick Command Launcher
 echo "Cloudbox Quick Command Launcher"
 echo
 PS3='Choose Command: '
-options=("Plex AutoScan Log" "Cloudplow Log" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Show Certificate Information" "Renew Necessary Certi$
+options=("Plex AutoScan Log" "Cloudplow Log" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Show Certificate Information" "Renew Necessary Certificates" "Force Renew ALL Certificates" "NCDU Local Mount" "Get Plex Token" "Nench Benchmark" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -33,7 +32,7 @@ do
         ;;
         "Get Plex Token")
         echo "Launching Plex Token Script"
-        /opt/scripts/plex/plex_token.sh
+        /scripts/files/plex_token.sh
         ;;
         "Show Certificate Information")
         echo "Launching Certificate Information"
