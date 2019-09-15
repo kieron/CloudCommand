@@ -3,7 +3,7 @@ A very simple script to quickly launch common scripts/commands, relating to a Cl
 
 Instructions:
 
-1.  curl "https://raw.githubusercontent.com/phunkb/Cloudbox-Quick-Command-Launcher/master/QuickCommands.sh" > /opt/scripts/quickCommands.sh; chmod +x /opt/scripts/quickCommands.sh
+1.  `curl "https://raw.githubusercontent.com/phunkb/Cloudbox-Quick-Command-Launcher/master/QuickCommands.sh" > /opt/scripts/quickCommands.sh; chmod +x /opt/scripts/quickCommands.sh`
 
 Then it is advised you set an alias for easy launching, I use `qc` for example. Here is how to set the alias:
 
