@@ -7,7 +7,7 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Plex AutoScan Log")
-        echo "\e[96mLaunching Plex Autoscan Log Tail. \e[39m"
+        echo -e "\e[96mLaunching Plex Autoscan Log Tail. \e[39m"
         tail -f /opt/plex_autoscan/plex_autoscan.log -n 30
         ;;
         "Cloudplow Log")
