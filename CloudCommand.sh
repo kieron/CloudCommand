@@ -71,7 +71,7 @@ do
         "Quit")
             break
             ;;
-        *) echo -e "\e[96minvalid option $REPLY \e[39m";;
+        *) echo -e "\e[96mInvalid option $REPLY \e[39m";;
     esac
 done
 
