@@ -20,7 +20,7 @@ do
 			tail -f /opt/cloudplow/cloudplow.log -n 30
         ;;
 	"Cloudplow Get Google Ban Info")
-			echo grep "Rate Limit" /opt/cloudplow/cloudplow.log | tail -1 
+			grep "Rate Limit" /opt/cloudplow/cloudplow.log | tail -1 
 			echo
         ;;
         "NCDU /opt (excluding Plex)")
