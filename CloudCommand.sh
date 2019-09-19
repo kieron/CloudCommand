@@ -5,7 +5,7 @@ echo -e "\e[32mCloudbox Quick Command Launcher"
 echo -e "Choose a command from below:\e[37m"
 echo
 PS3='Enter Command: '
-options=("Plex AutoScan Log" "Cloudplow Log" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Plex Sync Folder Size" "Show Certificate Information" "Fix Plex Trash" "Renew Necessary Certificates" "Force Renew ALL Certificates" "NCDU Local Mount" "Get Plex Token" "Update Ubuntu" "Nench Benchmark" "Quit")
+options=("Plex AutoScan Log" "Cloudplow Log" "Cloudplow Get Google Ban Info" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Plex Sync Folder Size" "Show Certificate Information" "Fix Plex Trash" "Renew Necessary Certificates" "Force Renew ALL Certificates" "NCDU Local Mount" "Get Plex Token" "Update Ubuntu" "Nench Benchmark" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -18,6 +18,10 @@ do
 			echo -e "\e[96mLaunching Cloudplow Log Tail. \e[39m"
 			echo
 			tail -f /opt/cloudplow/cloudplow.log -n 30
+        ;;
+	"Cloudplow Get Google Ban Info")
+			echo grep "Rate Limit" /opt/cloudplow/cloudplow.log | tail -1 
+			echo
         ;;
         "NCDU /opt (excluding Plex)")
 			echo -e "\e[96mLaunching NCDU (excluding Plex). \e[39m"
