@@ -21,6 +21,7 @@ do
         ;;
 	"Get Google Upload Ban Log Entry")
 			echo -e "\e[96mGetting last Cloudplow Google Ban Entry. \e[39m"
+			echo
 			grep "Rate Limit" /opt/cloudplow/cloudplow.log | tail -1 
 			echo
         ;;
