@@ -20,6 +20,7 @@ do
 			tail -f /opt/cloudplow/cloudplow.log -n 30
         ;;
 	"Get Google Upload Ban Log Entry")
+			echo -e "\e[96mGetting last Cloudplow Google Ban Entry. \e[39m"
 			grep "Rate Limit" /opt/cloudplow/cloudplow.log | tail -1 
 			echo
         ;;
