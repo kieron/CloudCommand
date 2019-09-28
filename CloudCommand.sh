@@ -5,7 +5,7 @@ echo -e "\e[32mCloudbox Quick Command Launcher"
 echo -e "Choose a command from below:\e[37m"
 echo
 PS3='Enter Command: '
-options=("Plex AutoScan Log" "Cloudplow Log" "Get Google Upload Ban Log Entry" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Plex Sync Folder Size" "Show Certificate Information" "Fix Plex Trash" "Renew Necessary Certificates" "Force Renew ALL Certificates" "NCDU Local Mount" "Get Plex Token" "Update Ubuntu" "Nench Benchmark" "Quit")
+options=("Plex AutoScan Log" "Cloudplow Log" "Get Google Upload Ban Log Entry" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Plex Sync Folder Size" "Show Certificate Information" "Fix Plex Trash" "Renew Necessary Certificates" "Force Renew ALL Certificates" "NCDU Local Mount" "NCDU / (system) (excluding /mnt)" "Get Plex Token" "Update Ubuntu" "Nench Benchmark" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -37,6 +37,10 @@ do
         "NCDU Local Mount")
 			echo -e "\e[96mLaunching NCDU in Local Mount. \e[39m"
 			ncdu "/mnt/local/"
+        ;;
+	"NCDU / (system) (excluding /mnt)")
+			echo -e "\e[96mLaunching NCDU on system (excluding /mnt). \e[39m"
+			ncdu -x / --exclude=/mnt
         ;;
         "Get Plex Token")
 			echo -e "\e[96mLaunching Plex Token Script. \e[39m"
