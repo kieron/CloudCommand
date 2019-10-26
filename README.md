@@ -5,7 +5,7 @@ CloudCommand is a very simple script to quickly launch common scripts/commands, 
 
 The below will download the script, and place it into `/opt/scripts`.
 
-`curl "https://raw.githubusercontent.com/phunkb/Cloudbox-Quick-Command-Launcher/master/CloudCommand.sh" > /opt/scripts/CloudCommand.sh; chmod +x /opt/scripts/CloudCommand.sh`
+`curl "https://raw.githubusercontent.com/kieronbos/Cloudbox-Quick-Command-Launcher/master/CloudCommand.sh" > /opt/scripts/CloudCommand.sh; chmod +x /opt/scripts/CloudCommand.sh`
 
 Then it is advised you set an alias for easy launching, I use `cc` for example. Here is how to set the alias:
 
@@ -26,4 +26,4 @@ Zsh:
 
 Updating instructions are actually the same as downloading currently, simply run:
 
-`curl "https://raw.githubusercontent.com/phunkb/Cloudbox-Quick-Command-Launcher/master/CloudCommand.sh" > /opt/scripts/CloudCommand.sh; chmod +x /opt/scripts/CloudCommand.sh`
+`curl "https://raw.githubusercontent.com/kieronbos/Cloudbox-Quick-Command-Launcher/master/CloudCommand.sh" > /opt/scripts/CloudCommand.sh; chmod +x /opt/scripts/CloudCommand.sh`
