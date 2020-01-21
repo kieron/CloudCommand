@@ -5,7 +5,27 @@ echo -e "\e[32mCloudbox Quick Command Launcher"
 echo -e "Choose a command from below:\e[37m"
 echo
 PS3='Enter Command: '
-options=("Plex AutoScan Log" "Cloudplow Log" "Get Google Upload Ban Log Entry" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Plex Sync Folder Size" "Show Certificate Information" "Fix Plex Trash" "Renew Necessary Certificates" "Force Renew ALL Certificates" "NCDU Local Mount" "NCDU / (system) (excluding /mnt)" "Get Plex Token" "Update Ubuntu" "Nench Benchmark" "Run Plex Dupefinder" "Quit")
+options=(
+"Plex AutoScan Log" 
+"Cloudplow Log" 
+"Get Google Upload Ban Log Entry" 
+"NCDU /opt (excluding Plex)" 
+"NCDU /opt (including Plex)" 
+"Plex Sync Folder Size" 
+"Show Certificate Information" 
+"Fix Plex Trash" 
+"Renew Necessary Certificates" 
+"Force Renew ALL Certificates" 
+"NCDU Local Mount" 
+"NCDU / (system) (excluding /mnt)" 
+"Get Plex Token" 
+"Update Ubuntu" 
+"Nench Benchmark" 
+"Run Plex Dupefinder" 
+"Run Glances"
+"Cloudplow Upload"
+"Quit"
+)
 select opt in "${options[@]}"
 do
     case $opt in
@@ -82,6 +102,16 @@ do
 			echo -e "\e[96mLaunching Plex Dupefinder. \e[39m"
 			echo
 			/opt/plex_dupefinder/plexdupes.py
+        ;;
+	"Run Glances")
+			echo -e "\e[96mLaunching Glances. \e[39m"
+			echo
+			glances
+        ;;
+	"Cloudplow Upload")
+			echo -e "\e[96mLaunching Cloudplow Upload. \e[39m"
+			echo
+			cloudplow upload
         ;;
         "Quit")
             break
