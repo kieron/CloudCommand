@@ -5,7 +5,7 @@ echo -e "\e[32mCloudbox Quick Command Launcher"
 echo -e "Choose a command from below:\e[37m"
 echo
 PS3='Enter Command: '
-options=("Plex AutoScan Log" "Cloudplow Log" "Get Google Upload Ban Log Entry" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Plex Sync Folder Size" "Show Certificate Information" "Fix Plex Trash" "Renew Necessary Certificates" "Force Renew ALL Certificates" "NCDU Local Mount" "NCDU / (system) (excluding /mnt)" "Get Plex Token" "Update Ubuntu" "Nench Benchmark" "Quit")
+options=("Plex AutoScan Log" "Cloudplow Log" "Get Google Upload Ban Log Entry" "NCDU /opt (excluding Plex)" "NCDU /opt (including Plex)" "Plex Sync Folder Size" "Show Certificate Information" "Fix Plex Trash" "Renew Necessary Certificates" "Force Renew ALL Certificates" "NCDU Local Mount" "NCDU / (system) (excluding /mnt)" "Get Plex Token" "Update Ubuntu" "Nench Benchmark" "Run Plex Dupefinder" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -66,7 +66,7 @@ do
 			echo -e "\e[96mForcing Renew of ALL Cerificates. \e[39m"
 			docker exec letsencrypt /app/cert_status
         ;;
-		"Update Ubuntu")
+	"Update Ubuntu")
 			echo -e "\e[96mUpdating Ubuntu \e[39m"
 			sudo apt-get update
 			sudo apt-get dist-upgrade -y
@@ -77,6 +77,11 @@ do
 			echo -e "\e[96mLaunching Nench Benchmark. \e[39m"
 			echo
 			curl -s wget.racing/nench.sh | bash
+        ;;
+	"Run Plex Dupefinder")
+			echo -e "\e[96mLaunching Plex Dupefinder. \e[39m"
+			echo
+			/opt/plex_dupefinder/plexdupes.py
         ;;
         "Quit")
             break
