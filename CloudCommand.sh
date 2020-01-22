@@ -1,7 +1,6 @@
 #!/bin/bash
 # Cloudbox Quick Command Launcher v.0.1
 figlet CloudCommand
-echo -e "\e[32mCloudbox Quick Command Launcher"
 echo -e "Choose a command from below:\e[37m"
 echo
 PS3='Enter Command: '
