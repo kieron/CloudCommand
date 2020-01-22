@@ -26,4 +26,4 @@ Zsh:
 
 Updating instructions are similar to downloading currently, but with no cache, simply run:
 
-`curl -H 'Cache-Control: no-cache' "https://raw.githubusercontent.com/kieronbos/CloudCommand/master/CloudCommand.sh" > /opt/scripts/CloudCommand.sh; chmod +x /opt/scripts/CloudCommand.sh`
+`curl -H 'Cache-Control: no-cache' "https://raw.githubusercontent.com/kieronbos/CloudCommand/master/CloudCommand.sh?$(date +%s)" > /opt/scripts/CloudCommand.sh; chmod +x /opt/scripts/CloudCommand.sh`
