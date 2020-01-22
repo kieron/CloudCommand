@@ -73,7 +73,7 @@ do
 			echo -e "\e[96mLocal Media Folder Size is: $currSize \e[39m"
         ;;
 	"Local Download Folder Size")
-			currSize=$(sudo du -sh '/mnt/local/Dowonloads' | awk '{print $1}')
+			currSize=$(sudo du -sh '/mnt/local/Downloads' | awk '{print $1}')
 			echo -e "\e[96mLocal Download Folder Size is: $currSize \e[39m"
         ;;
 	"Plex Sync Folder Size")
