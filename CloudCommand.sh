@@ -11,7 +11,9 @@ options=(
 "Get Google Upload Ban Log Entry" 
 "NCDU /opt (excluding Plex)" 
 "NCDU /opt (including Plex)" 
-"Plex Sync Folder Size" 
+"Plex Sync Folder Size"
+"Local Media Folder Size"
+"Local Download Folder Size"
 "Show Certificate Information" 
 "Fix Plex Trash" 
 "Renew Necessary Certificates" 
@@ -66,14 +68,22 @@ do
 			echo -e "\e[96mLaunching Plex Token Script. \e[39m"
 			/opt/scripts/plex/plex_token.sh
         ;;
-        "Plex Sync Folder Size")
+        "Local Media Folder Size")
+			currSize=$(sudo du -sh '/mnt/local/Media' | awk '{print $1}')
+			echo -e "\e[96mLocal Media Folder Size is: $currSize \e[39m"
+        ;;
+	"Local Download Folder Size")
+			currSize=$(sudo du -sh '/mnt/local/Dowonloads' | awk '{print $1}')
+			echo -e "\e[96mLocal Download Folder Size is: $currSize \e[39m"
+        ;;
+	"Plex Sync Folder Size")
 			currSize=$(sudo du -sh '/opt/plex/Library/Application Support/Plex Media Server/Cache/Transcode' | awk '{print $1}')
 			echo -e "\e[96mSync Folder Size is: $currSize \e[39m"
         ;;
-		"Fix Plex Trash")
-			echo -e "\e[96mRunning Plex Trash Fixer Script. \e[39m"
-			/opt/scripts/plex/plex_trash_fixer.py
-		;;
+	"Fix Plex Trash")
+		echo -e "\e[96mRunning Plex Trash Fixer Script. \e[39m"
+		/opt/scripts/plex/plex_trash_fixer.py
+	;;
         "Show Certificate Information")
 			echo -e "\e[96mLaunching Certificate Information. \e[39m"
 			docker exec letsencrypt /app/cert_status
