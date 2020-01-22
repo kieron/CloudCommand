@@ -25,6 +25,7 @@ options=(
 "Run Plex Dupefinder" 
 "Run Glances"
 "Cloudplow Upload"
+"Update CloudCommand"
 "Quit"
 )
 select opt in "${options[@]}"
@@ -122,9 +123,12 @@ do
 			echo
 			cloudplow upload
         ;;
-        "Quit")
+        "Update CloudCommand")
+            curl -H 'Cache-Control: no-cache' "https://raw.githubusercontent.com/kieronbos/CloudCommand/master/CloudCommand.sh?$(date +%s)" > /opt/scripts/CloudCommand.sh; chmod +x /opt/scripts/CloudCommand.sh
+        ;;
+    	"Quit")
             break
-            ;;
+        ;;
         *) echo -e "\e[96mInvalid option $REPLY \e[39m";;
     esac
 done
