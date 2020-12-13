@@ -11,6 +11,7 @@ options=(
 "NCDU /opt (excluding Plex)" 
 "NCDU /opt (including Plex)" 
 "Plex Sync Folder Size"
+"Plex PhotoTranscoder Folder Size"
 "Local Media Folder Size"
 "Local Download Folder Size"
 "Show Certificate Information" 
@@ -79,6 +80,10 @@ do
 	"Plex Sync Folder Size")
 			currSize=$(sudo du -sh '/opt/plex/Library/Application Support/Plex Media Server/Cache/Transcode' | awk '{print $1}')
 			echo -e "\e[96mSync Folder Size is: $currSize \e[39m"
+        ;;
+	"Plex PhotoTranscoder Folder Size")
+			currSize=$(sudo du -sh '/opt/plex/Library/Application Support/Plex Media Server/Cache/PhotoTranscoder' | awk '{print $1}')
+			echo -e "\e[96mPhotoTranscoder Folder Size is: $currSize \e[39m"
         ;;
 	"Fix Plex Trash")
 		echo -e "\e[96mRunning Plex Trash Fixer Script. \e[39m"
