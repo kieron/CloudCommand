@@ -5,7 +5,7 @@ CloudCommand is a very simple script to quickly launch common scripts/commands, 
 
 The below will download the script, and place it into `/opt/scripts`.
 
-`curl "https://raw.githubusercontent.com/kieronbos/CloudCommand/master/CloudCommand.sh" > /opt/scripts/CloudCommand.sh; chmod +x /opt/scripts/CloudCommand.sh`
+`curl "https://raw.githubusercontent.com/kieron/CloudCommand/master/CloudCommand.sh" > /opt/scripts/CloudCommand.sh; chmod +x /opt/scripts/CloudCommand.sh`
 
 Then it is advised you set an alias for easy launching, I use `cc` for example. Here is how to set the alias:
 
@@ -26,4 +26,4 @@ Zsh:
 
 Updating instructions are similar to downloading currently, but with no cache, simply run:
 
-`curl -H 'Cache-Control: no-cache' "https://raw.githubusercontent.com/kieronbos/CloudCommand/master/CloudCommand.sh?$(date +%s)" > /opt/scripts/CloudCommand.sh; chmod +x /opt/scripts/CloudCommand.sh`
+`curl -H 'Cache-Control: no-cache' "https://raw.githubusercontent.com/kieron/CloudCommand/master/CloudCommand.sh?$(date +%s)" > /opt/scripts/CloudCommand.sh; chmod +x /opt/scripts/CloudCommand.sh`
