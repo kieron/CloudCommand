@@ -12,6 +12,7 @@ options=(
 "NCDU /opt (including Plex)" 
 "Plex Sync Folder Size"
 "Plex PhotoTranscoder Folder Size"
+"Delete PhotoTranscoder Folder Contents"
 "Local Media Folder Size"
 "Local Download Folder Size"
 "Show Certificate Information" 
@@ -84,6 +85,13 @@ do
 	"Plex PhotoTranscoder Folder Size")
 			currSize=$(sudo du -sh '/opt/plex/Library/Application Support/Plex Media Server/Cache/PhotoTranscoder' | awk '{print $1}')
 			echo -e "\e[96mPhotoTranscoder Folder Size is: $currSize \e[39m"
+        ;;
+	"Delete PhotoTranscoder Folder Contents")
+			oldSize=$(sudo du -sh '/opt/plex/Library/Application Support/Plex Media Server/Cache/PhotoTranscoder' | awk '{print $1}')
+			echo -e "\e[96mPhotoTranscoder Folder Size is: $oldSize \e[39m"
+			rm -rf -f /opt/plex/Library/Application\ Support/Plex\ Media\ Server/Cache/PhotoTranscoder/*
+			currSize=$(sudo du -sh '/opt/plex/Library/Application Support/Plex Media Server/Cache/PhotoTranscoder' | awk '{print $1}')
+			echo -e "\e[96mDelted PhotoTranscoder Folder Contents, Size is now: $currSize \e[39m"
         ;;
 	"Fix Plex Trash")
 		echo -e "\e[96mRunning Plex Trash Fixer Script. \e[39m"
