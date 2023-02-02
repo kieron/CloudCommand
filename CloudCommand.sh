@@ -142,7 +142,7 @@ do
         ;;
 	"Update Overseerr")
 			echo -e "\e[96mUpdating Overseerr. \e[39m"
-			sudo ansible-playbook ~/community/community.yml --tags overseerr
+			cd /home/seed/community/ && sudo ansible-playbook community.yml --tags overseerr
         ;;
     	"Quit")
             		break
