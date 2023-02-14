@@ -141,6 +141,7 @@ do
         ;;
         "Update CloudCommand")
             		curl -H 'Cache-Control: no-cache' "https://raw.githubusercontent.com/kieronbos/CloudCommand/master/CloudCommand.sh?$(date +%s)" > /opt/scripts/CloudCommand.sh; chmod +x /opt/scripts/CloudCommand.sh
+			break
         ;;
 	"Update Overseerr")
 			echo -e "\e[96mUpdating Overseerr. \e[39m"
