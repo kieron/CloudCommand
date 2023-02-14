@@ -30,6 +30,7 @@ options=(
 "Update CloudCommand"
 "Update Overseerr"
 "Update Plex"
+"Update Portainer"
 "Quit"
 )
 select opt in "${options[@]}"
@@ -148,6 +149,10 @@ do
 	"Update Plex")
 			echo -e "\e[96mUpdating Plex. \e[39m"
 			cd /home/seed/cloudbox/ && sudo ansible-playbook cloudbox.yml --tags plex
+        ;;
+	"Update Portainer")
+			echo -e "\e[96mUpdating Portainer. \e[39m"
+			cd /home/seed/cloudbox/ && sudo ansible-playbook cloudbox.yml --tags portainer
         ;;
     	"Quit")
             		break
