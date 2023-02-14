@@ -29,6 +29,7 @@ options=(
 "Cloudplow Upload"
 "Update CloudCommand"
 "Update Overseerr"
+"Update Plex"
 "Quit"
 )
 select opt in "${options[@]}"
@@ -143,6 +144,10 @@ do
 	"Update Overseerr")
 			echo -e "\e[96mUpdating Overseerr. \e[39m"
 			cd /home/seed/community/ && sudo ansible-playbook community.yml --tags overseerr
+        ;;
+	"Update Plex")
+			echo -e "\e[96mUpdating Plex. \e[39m"
+			cd /home/seed/cloudbox/ && sudo ansible-playbook cloudbox.yml --tags plex
         ;;
     	"Quit")
             		break
